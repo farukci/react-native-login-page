@@ -12,7 +12,6 @@ import {
 
 import ShoppingCart from './components/ShoppingCart';
 import FlatButton from "./components/button";
-import SecondPage from "./components/secondPage";
 
 
 const App = () => {
