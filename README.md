@@ -1,7 +1,7 @@
 React Native Login Page Project
 
-![screen](./loginPage.gif)
+![screengif](./loginPage.gif)
 
-<p align="center">
+<!-- <p align="center">
   <img src="./loginPage.gif" width="350" title="hover text">
-</p>
+</p> -->
