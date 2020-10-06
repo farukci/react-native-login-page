@@ -11,6 +11,8 @@ import {
 } from 'react-native';
 
 import ShoppingCart from './components/ShoppingCart';
+import FlatButton from "./components/button";
+import SecondPage from "./components/secondPage";
 
 
 const App = () => {
@@ -34,21 +36,8 @@ const App = () => {
         defaultValue={""}
         autoCorrect={false}
       />
-      <View style={styles.buttons}>
-        <Button
-          color="#546E7A"
-          title="Giriş Yap"
-          onPress={() => {}}
-        />
-      </View>
-      <View style={styles.buttons}>
-        <Button
-          color="#546E7A"
-          borderRadius= ""
-          title="Kayıt Ol"
-          onPress={() => {}}
-        />
-      </View>
+      <FlatButton text="Giriş Yap" onPress={() => {}}/>
+      <FlatButton text="Kayıt Ol" onPress={() => {}}/>
     </View>
   );
 };
@@ -67,7 +56,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     height: 50, 
     backgroundColor: "white",
-    fontFamily: "arial",
+    fontFamily: "none",
   },
   buttons: {
     marginLeft: 100,
@@ -77,4 +66,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default App;
+export default App; 
