@@ -4,14 +4,15 @@ import {
   SafeAreaView,
   StyleSheet,
   ScrollView,
-  Button,
   View,
   Text,
-  StatusBar, TextInput
+  StatusBar, 
+  TextInput,
+  Image,
+  Dimensions
 } from 'react-native';
 
-import ShoppingCart from './components/ShoppingCart';
-import FlatButton from "./components/button";
+import { Input, Button} from "./components"
 
 
 const App = () => {
@@ -19,33 +20,27 @@ const App = () => {
   // const [value, onChangeText] = React.useState('Useless Placeholder');
 
   return (
-    <View style={styles.body}>
-      <ShoppingCart/>
-      <TextInput
-        style={styles.form}
-        placeholder="E-posta giriniz..."
-        defaultValue={""}
-        // onChangeText={text => onChangeText(text)}
-        // value={value}
-      />
-      <TextInput
-        secureTextEntry
-        style={styles.form}
-        placeholder="Şifre giriniz..."
-        defaultValue={""}
-        autoCorrect={false}
-      />
-      <FlatButton text="Giriş Yap" onPress={() => {}}/>
-      <FlatButton text="Kayıt Ol" onPress={() => {}}/>
-    </View>
+    <SafeAreaView style={{flex:1}}>
+      <View style={styles.body}>
+        {/* <ShoppingCart/> */}
+        <Image
+          style={styles.logo}
+          source={require('./images/shopping_cart.png')}
+        />
+
+        <Input holder="E-posta giriniz..." />
+        <Input holder="Şifre giriniz..." />
+
+        <Button text="Giriş Yap" onPress={() => {}}/>
+        <Button text="Kayıt Ol" onPress={() => {}}/>
+      </View>
+    </SafeAreaView>
   );
 };
 const styles = StyleSheet.create({
   body: {
     backgroundColor: "#80CBC4", 
-    display: "flex",
-    // justifyContent: "space-evenly",
-    height: 800,
+    flex:1,
   },  
   form: {
     margin: 20,
@@ -62,7 +57,34 @@ const styles = StyleSheet.create({
     marginRight: 100,
     marginBottom: 10,
     backgroundColor: "#546E7A",
-  }
+  },
+  logo: {
+    // backgroundColor: "red",
+    resizeMode: "contain",
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height * 0.35,
+  },
 });
 
 export default App; 
+
+
+/* 
+
+        <TextInput
+          style={styles.form}
+          placeholder="E-posta giriniz..."
+          defaultValue={""}
+          // onChangeText={text => onChangeText(text)}
+          // value={value}
+        />
+        <TextInput
+          secureTextEntry
+          style={styles.form}
+          placeholder="Şifre giriniz..."
+          defaultValue={""}
+          autoCorrect={false}
+        />
+
+
+*/
