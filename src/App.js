@@ -42,16 +42,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#80CBC4", 
     flex:1,
   },  
-  form: {
-    margin: 20,
-    padding: 10,
-    borderColor: "white",
-    borderWidth: 1,
-    borderRadius: 10,
-    height: 50, 
-    backgroundColor: "white",
-    fontFamily: "none",
-  },
   buttons: {
     marginLeft: 100,
     marginRight: 100,
@@ -59,7 +49,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#546E7A",
   },
   logo: {
-    // backgroundColor: "red",
     resizeMode: "contain",
     width: Dimensions.get("window").width,
     height: Dimensions.get("window").height * 0.35,
