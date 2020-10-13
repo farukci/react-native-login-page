@@ -22,7 +22,6 @@ const App = () => {
   return (
     <SafeAreaView style={{flex:1}}>
       <View style={styles.body}>
-        {/* <ShoppingCart/> */}
         <Image
           style={styles.logo}
           source={require('./images/shopping_cart.png')}
@@ -41,12 +40,6 @@ const styles = StyleSheet.create({
   body: {
     backgroundColor: "#80CBC4", 
     flex:1,
-  },  
-  buttons: {
-    marginLeft: 100,
-    marginRight: 100,
-    marginBottom: 10,
-    backgroundColor: "#546E7A",
   },
   logo: {
     resizeMode: "contain",
