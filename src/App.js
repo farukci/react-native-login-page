@@ -3,13 +3,15 @@ import React, {Component} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   Text,
   StatusBar, 
   TextInput,
   Image,
-  Dimensions
+  Dimensions,
+  ScrollView,
+  KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
 
 import { Input, Button} from "./components"
@@ -20,27 +22,31 @@ const App = () => {
   // const [value, onChangeText] = React.useState('Useless Placeholder');
 
   return (
-    <SafeAreaView style={{flex:1}}>
-      <View style={styles.body}>
-        <Image
-          style={styles.logo}
-          source={require('./images/shopping_cart.png')}
-        />
+    <SafeAreaView style={{flex:1, backgroundColor: "#80CBC4"}} >
+      <KeyboardAvoidingView 
+        style={{flex:1}} 
+        behavior={Platform.OS == "android" ? null : "padding"} 
+      >
+        <ScrollView style={{flex:1}} bounces={false} >
+          <View style={{flex:1}}>
+            <Image
+              style={styles.logo}
+              source={require('./images/shopping_cart.png')}
+            />
 
-        <Input holder="E-posta giriniz..." />
-        <Input holder="Şifre giriniz..." />
+            <Input holder="E-posta giriniz..." />
+            <Input holder="Şifre giriniz..." />
 
-        <Button text="Giriş Yap" onPress={() => {}}/>
-        <Button text="Kayıt Ol" onPress={() => {}}/>
-      </View>
+            <Button text="Giriş Yap" />
+            <Button text="Kayıt Ol" />
+          </View>
+        </ScrollView>
+      </KeyboardAvoidingView>
     </SafeAreaView>
-  );
-};
+  )
+}
+
 const styles = StyleSheet.create({
-  body: {
-    backgroundColor: "#80CBC4", 
-    flex:1,
-  },
   logo: {
     resizeMode: "contain",
     width: Dimensions.get("window").width,
@@ -48,25 +54,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App; 
-
-
-/* 
-
-        <TextInput
-          style={styles.form}
-          placeholder="E-posta giriniz..."
-          defaultValue={""}
-          // onChangeText={text => onChangeText(text)}
-          // value={value}
-        />
-        <TextInput
-          secureTextEntry
-          style={styles.form}
-          placeholder="Şifre giriniz..."
-          defaultValue={""}
-          autoCorrect={false}
-        />
-
-
-*/
+export default App;
